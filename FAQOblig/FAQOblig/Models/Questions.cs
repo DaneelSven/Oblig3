@@ -13,5 +13,7 @@ namespace FAQOblig.Models
         public String Question { get; set; }
 
         public String Answers { get; set; }
+
+        public String Date { get; set; }
     }
 }
