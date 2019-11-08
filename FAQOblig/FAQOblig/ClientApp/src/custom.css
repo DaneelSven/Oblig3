@@ -3,6 +3,10 @@ a {
   color: #0366d6;
 }
 
+element.style {
+    background-color: #BDC3C7;
+}
+
 code {
   color: #E01A76;
 }
@@ -15,4 +19,17 @@ code {
 
 .box{
     margin-bottom: 2em;
+}
+
+.headerMargin {
+    margin-top: 20px;
+}
+
+.btnRound {
+    border-radius: 50%;
+}
+
+.img{
+    width: 10px;
+    height: 10px;
 }
