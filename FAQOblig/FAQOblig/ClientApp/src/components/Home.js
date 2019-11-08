@@ -44,9 +44,12 @@ export class Home extends Component {
                           method: 'POST',
                           data: document.getElementById('a').value
                       }
-                          )} type="button">Ask</button>
+                      )
+                      
+                      } type="button">Ask</button>
                           </div>
-</div>
+
+              </div>
 
           </div>  
           
