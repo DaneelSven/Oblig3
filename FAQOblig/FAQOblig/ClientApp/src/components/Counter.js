@@ -30,11 +30,12 @@ export class Counter extends Component {
     return (
         <div className="text-left ">
             
-            <button className="btn btn-primary btn-sm btnRound" onClick={this.incrementCounter}>Upvote</button>
-
-            <p aria-live="polite">Popularity: <strong>{this.state.currentCount}</strong></p>
-
-            <button className="btn btn-primary btn-sm btnRound" onClick={this.decreaseCounter}>Downvote</button>
+            <button type="button" className="btn btn-success btn-rounded" onClick={this.incrementCounter}>Upvote</button>
+            <br></br>
+            <div className="text-center">
+                <h7  aria-live="polite">Popularity: <strong>{this.state.currentCount}</strong></h7>
+            </div>
+            <button className="btn btn-danger" onClick={this.decreaseCounter}>Downvote</button>
 
 
       </div>
