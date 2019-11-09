@@ -1,14 +1,43 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import { Counter } from './Counter';
 
 export class Home extends Component {
     static displayName = Home.name;
 
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            data: [],
+            question: '',
+            answer: '',
+            date: '',
+        }
+        
+        this.handleSubmit = this.handleSubmit(this);
+        this.handleQuestion = this.handleQuestion(this);
 
-    state = {
-        data: []
-    };
+
+    }
+
+    handleQuestion(e) {
+        this.setState({
+
+            question: e.target.value
+        });
+    }
+
+
+    handleSubmit(event) {
+
+        axios.post("api/Questions", this.state)
+            .then(response => {
+                console.log(response)
+            }).catch (error => {
+            console.log(error)
+        });
+    }
 
     componentDidMount() {
 
@@ -22,10 +51,13 @@ export class Home extends Component {
             });
     }
 
-  render () {
+    render() {
+
+        let { question } = this.state;
+
       return (
           <div >
-
+             
               {this.state.data.map(obj => {
                   return(
                       <div className="card text-center text-white bg-secondary box">
@@ -68,10 +100,17 @@ export class Home extends Component {
 
               </div>
 
+
               <form onSubmit={this.handleSubmit}>
-                  <input type="text" name="question" id="a" onChange={this.handleAnswer} className="inputGroup-sizing-default"></input>
+                  <input
+                      type="text"
+                      name="question"
+                      value={question}
+                      onChange={this.handleQuestion}
+                      className="inputGroup-sizing-default" >
+                  </input>
                   <div>
-                      <button type="submit" className="btn btn-secondary" onClick={() => document.getElementById("a").value}>Add Question </button>
+                      <button type="submit" className="btn btn-secondary">Add Question </button>
                   </div>
               </form>
 
