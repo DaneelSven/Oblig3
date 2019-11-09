@@ -7,7 +7,7 @@ export class Home extends Component {
 
 
     constructor(props) {
-        super(props)
+        super(props);
         this.state = {
             data: [],
             question: '',
@@ -15,9 +15,8 @@ export class Home extends Component {
             date: '',
         }
         
-        this.handleSubmit = this.handleSubmit(this);
-        this.handleQuestion = this.handleQuestion(this);
-
+        this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleQuestion = this.handleQuestion.bind(this);
 
     }
 
@@ -51,15 +50,31 @@ export class Home extends Component {
             });
     }
 
+    QuestionNoAnswer() {
+        this.state.data.map(obj => {
+            if (obj.answer == null) {
+                return (
+                    <div>
+                        <h5>{obj.question}</h5>
+                        <h5>{obj.question}</h5>
+
+   
+                        <p>helloo</p>
+                    </div>
+                    )
+            }
+        })
+    }
+
     render() {
 
-        let { question } = this.state;
+        const { question } = this.state;
 
       return (
           <div >
-             
+              {this.QuestionNoAnswer()}
               {this.state.data.map(obj => {
-                  return(
+                  return (
                       <div className="card text-center text-white bg-secondary box">
                           <div className="card-header">
                               <div className="form-group">
@@ -82,20 +97,23 @@ export class Home extends Component {
                           <p>Answer: {obj.answers}</p>
                           <p>Date question submited: {obj.date}</p>
                       </div>
-                         
+                                               
+                      
+
                   )
  
               })}
+
+             
               <div className="input-group box">
-                  <input type="text" className="form-control" placeholder="Ask a Question" aria-label="Question with button" id="a" aria-describedby="button-addon4"/>
+                  <input
+                      type="text"
+                      className="form-control"
+                      placeholder="Ask a Question"
+                      aria-label="Question with button" 
+                      aria-describedby="button-addon4" />
                   <div className="input-group-append" id="button-addon4">
-                      <button className="btn btn-outline-secondary" onClick={() => fetch({
-                          method: 'POST',
-                          data: document.getElementById('a').value
-                      }
-                      )
-                      
-                      } type="button">Ask</button>
+                      <button className="btn btn-outline-secondary"  type="button">Ask</button>
                           </div>
 
               </div>
@@ -107,6 +125,7 @@ export class Home extends Component {
                       name="question"
                       value={question}
                       onChange={this.handleQuestion}
+                      placeholder="ask a question"
                       className="inputGroup-sizing-default" >
                   </input>
                   <div>
