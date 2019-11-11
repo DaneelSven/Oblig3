@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Example } from './Example'
 
 export class Counter extends Component {
   static displayName = Counter.name;
@@ -37,7 +38,9 @@ export class Counter extends Component {
             </div>
             <button className="btn btn-danger" onClick={this.decreaseCounter}>Downvote</button>
 
-
+            <div>
+                <Example/>
+            </div>
       </div>
     );
   }
