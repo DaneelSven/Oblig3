@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <Compile Remove="ClientApp\src\components\Answer.cs" />
+    <Compile Remove="ClientApp\src\components\collapse.cs" />
   </ItemGroup>
 
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">

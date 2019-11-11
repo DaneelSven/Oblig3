@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Example } from './Example';
+import { IoIosThumbsDown, IoIosThumbsUp  } from "react-icons/io";
 
 export class Counter extends Component {
   static displayName = Counter.name;
@@ -28,16 +30,16 @@ export class Counter extends Component {
 
   render() {
     return (
-        <div className="text-left ">
+        <div>
+
+            <IoIosThumbsDown onClick={this.decreaseCounter} />
+            <h7 aria-live="polite">Popularity: <strong>{this.state.currentCount}</strong></h7>
+            <IoIosThumbsUp onClick={this.incrementCounter}/>
+
             
-            <button type="button" className="btn btn-success btn-rounded" onClick={this.incrementCounter}>Upvote</button>
-            <br></br>
-            <div className="text-center">
-                <h7  aria-live="polite">Popularity: <strong>{this.state.currentCount}</strong></h7>
+            <div>
+                <Example/>
             </div>
-            <button className="btn btn-danger" onClick={this.decreaseCounter}>Downvote</button>
-
-
       </div>
     );
   }

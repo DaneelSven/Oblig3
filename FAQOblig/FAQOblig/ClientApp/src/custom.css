@@ -37,3 +37,12 @@ code {
 .p{
     margin-bottom:!important 0px;
 }
+
+.cardBody{
+    color: white;
+}
+
+.cardHeader{
+    color:white;
+    text-align: center;
+}

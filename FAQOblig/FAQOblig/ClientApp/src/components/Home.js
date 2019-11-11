@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Counter } from './Counter';
+import { Accordion, Card } from 'react-bootstrap';
 
 
 export class Home extends Component {
@@ -68,21 +69,7 @@ export class Home extends Component {
             });
     }
 
-    QuestionNoAnswer() {
-        this.state.data.map(obj => {
-            if (obj.answer === null) {
-                return (
-                    <div>
-                        <h5>{obj.question}</h5>
-                        <h5>{obj.question}</h5>
-
    
-                        <p>helloo</p>
-                    </div>
-                    )
-            }
-        })
-    }
 
     render() {
 
