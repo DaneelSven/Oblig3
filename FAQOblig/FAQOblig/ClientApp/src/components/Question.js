@@ -5,7 +5,7 @@ import { Counter } from './Counter';
 import { IoIosArrowBack } from "react-icons/io";
 
 
-export class Example extends Component {
+export class Question extends Component {
 
 
     constructor(props) {
@@ -130,4 +130,4 @@ export class Example extends Component {
     }
 }
 
-export default Example;
+export default Question;

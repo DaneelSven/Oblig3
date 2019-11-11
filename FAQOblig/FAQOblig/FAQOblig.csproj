@@ -28,11 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="ClientApp\src\components\Answer.cs" />
-    <Compile Remove="ClientApp\src\components\collapse.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="Models\Contact.js" />
   </ItemGroup>
 

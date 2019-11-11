@@ -4,7 +4,7 @@ a {
 }
 
 element.style {
-    background-color: #3D3D3D;
+    background-color: !important #3D3D3D ;
 }
 
 code {

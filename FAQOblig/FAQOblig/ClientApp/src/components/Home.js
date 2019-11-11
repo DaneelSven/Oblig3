@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import Example from './Example';
+import Question from './Question';
 
 
 export class Home extends Component {
@@ -53,7 +53,7 @@ export class Home extends Component {
 
       return (
           <div className="a" >
-              <Example />
+              <Question />
 
               <form onSubmit={this.handleSubmit}>
               <div className="input-group box">

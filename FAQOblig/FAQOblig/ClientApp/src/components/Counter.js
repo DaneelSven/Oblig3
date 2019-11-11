@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Example } from './Example';
 import { IoIosThumbsDown, IoIosThumbsUp  } from "react-icons/io";
 
 export class Counter extends Component {
