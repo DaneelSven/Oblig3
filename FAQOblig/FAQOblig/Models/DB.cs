@@ -13,5 +13,7 @@ namespace FAQOblig.Models
         }
 
         public DbSet<Questions> Questions { get; set; }
+
+        public DbSet<Contact> Contact { get; set; }
     }
 }

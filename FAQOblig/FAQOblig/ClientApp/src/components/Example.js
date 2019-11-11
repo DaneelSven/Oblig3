@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Counter } from './Counter';
+import { IoIosArrowBack } from "react-icons/io";
 
 
 export class Example extends Component {
@@ -79,15 +80,18 @@ export class Example extends Component {
                         <div>
                             {obj.answers === null ?
                                 <div>
-                                <Accordion defaultActiveKey="0">
+                                <Accordion  className="box" defaultActiveKey="0">
                                     <Card className="cardBody" body inverse style={{ backgroundColor: '#333', borderColor: '#BDC3C7' }}>
-                                        <Accordion.Toggle className="cardHeader" as={Card.Header} eventKey="0">
-                                            Question number: {obj.id}
-                                            <h5>{obj.question}</h5>    
+                                            <Accordion.Toggle className="cardHeader" as={Card.Header} eventKey="0">
+                                                Question number: {obj.id}
+                                                <IoIosArrowBack className="arrow" />
+
+                                                <h5>{obj.question}</h5>
+
                                         </Accordion.Toggle>
                                         <Accordion.Collapse eventKey="0">
                                             <Card.Body className="cardBody">
-                                                <p>We are sorry you question is under review and post an answer soon. Thank you for your patience!</p>
+                                                <p>We are sorry your question is currently under review we will provide an answer soon. Thank you for your patience!</p>
                                           
                                             </Card.Body>
                                         </Accordion.Collapse>
@@ -96,16 +100,17 @@ export class Example extends Component {
                                 </div>
 
                                 : <div>
-                                <Accordion defaultActiveKey="0">
+                                    <Accordion className="box" defaultActiveKey="0">
                                     <Card className="cardBody" body inverse style={{ backgroundColor: '#333', borderColor: '#BDC3C7' }}>
                                         <Accordion.Toggle className="cardHeader" as={Card.Header} eventKey="0">
-                                            Question number: {obj.id}
+                                                Question number: {obj.id}
+                                                <IoIosArrowBack className="arrow" />
+
                                             <h5>{obj.question}</h5>
                                         </Accordion.Toggle>
                                         <Accordion.Collapse eventKey="0">
-                                            <Card.Body className="cardBody">
-                                                <p>Answer: {obj.answers}</p>
-                                                    <p>Date question submited: {obj.date}</p>
+                                                <Card.Body className="cardBody">
+                                                    <p><strong>Answer:</strong> {obj.answers}</p>
                                                     <Counter/>
                                             </Card.Body>
                                         </Accordion.Collapse>

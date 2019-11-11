@@ -14,6 +14,6 @@ namespace FAQOblig.Models
 
         public String Answers { get; set; }
 
-        public String Date { get; set; }
+        public String Votes { get; set; }
     }
 }

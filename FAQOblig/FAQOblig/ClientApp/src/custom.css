@@ -46,3 +46,8 @@ code {
     color:white;
     text-align: center;
 }
+
+.arrow {
+    color: white;
+    float: right;
+}
