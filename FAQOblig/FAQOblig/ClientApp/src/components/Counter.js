@@ -37,9 +37,6 @@ export class Counter extends Component {
             <IoIosThumbsUp onClick={this.incrementCounter}/>
 
             
-            <div>
-                <Example/>
-            </div>
       </div>
     );
   }

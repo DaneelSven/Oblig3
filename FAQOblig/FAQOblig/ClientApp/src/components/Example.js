@@ -77,26 +77,42 @@ export class Example extends Component {
                 {this.state.data.map(obj => {
                     return (
                         <div>
-                <Accordion defaultActiveKey="0">
-                    <Card className="cardBody" body inverse style={{ backgroundColor: '#333', borderColor: '#BDC3C7' }}>
-                        <Accordion.Toggle className="cardHeader" as={Card.Header} eventKey="0">
-
-                                        Question number: {obj.id}
-
-                                       <h5>{obj.question}</h5>    
-                            </Accordion.Toggle>
-                        <Accordion.Collapse eventKey="0">
-                                        <Card.Body className="cardBody">
-
-                                            <p>Answer: {obj.answers}</p>
-                                            <p>Date question submited: {obj.date}</p>
-
-                                       
-
+                            {obj.answers === null ?
+                                <div>
+                                <Accordion defaultActiveKey="0">
+                                    <Card className="cardBody" body inverse style={{ backgroundColor: '#333', borderColor: '#BDC3C7' }}>
+                                        <Accordion.Toggle className="cardHeader" as={Card.Header} eventKey="0">
+                                            Question number: {obj.id}
+                                            <h5>{obj.question}</h5>    
+                                        </Accordion.Toggle>
+                                        <Accordion.Collapse eventKey="0">
+                                            <Card.Body className="cardBody">
+                                                <p>We are sorry you question is under review and post an answer soon. Thank you for your patience!</p>
+                                          
                                             </Card.Body>
-                                    </Accordion.Collapse>
-                    </Card>
-                            </Accordion>
+                                        </Accordion.Collapse>
+                                    </Card>
+                                    </Accordion>
+                                </div>
+
+                                : <div>
+                                <Accordion defaultActiveKey="0">
+                                    <Card className="cardBody" body inverse style={{ backgroundColor: '#333', borderColor: '#BDC3C7' }}>
+                                        <Accordion.Toggle className="cardHeader" as={Card.Header} eventKey="0">
+                                            Question number: {obj.id}
+                                            <h5>{obj.question}</h5>
+                                        </Accordion.Toggle>
+                                        <Accordion.Collapse eventKey="0">
+                                            <Card.Body className="cardBody">
+                                                <p>Answer: {obj.answers}</p>
+                                                    <p>Date question submited: {obj.date}</p>
+                                                    <Counter/>
+                                            </Card.Body>
+                                        </Accordion.Collapse>
+                                    </Card>
+                                    </Accordion>
+                                </div>
+                        }
                         </div>
                     )
                 })}
