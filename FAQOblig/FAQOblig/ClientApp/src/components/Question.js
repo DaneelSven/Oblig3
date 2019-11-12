@@ -100,7 +100,7 @@ export class Question extends Component {
                                 </div>
 
                                 : <div>
-                                    <Accordion className="box" defaultActiveKey="0">
+                                    <Accordion className="box" defaultActiveKey="1">
                                     <Card className="cardBody" body inverse style={{ backgroundColor: '#333', borderColor: '#BDC3C7' }}>
                                         <Accordion.Toggle className="cardHeader" as={Card.Header} eventKey="0">
                                                 Question number: {obj.id}
@@ -111,7 +111,7 @@ export class Question extends Component {
                                         <Accordion.Collapse eventKey="0">
                                                 <Card.Body className="cardBody">
                                                     <p><strong>Answer:</strong> {obj.answers}</p>
-                                                    <Counter/>
+                                                    <Counter votes={obj.votes} voteId={obj.id} />
                                             </Card.Body>
                                         </Accordion.Collapse>
                                     </Card>

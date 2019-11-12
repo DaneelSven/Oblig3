@@ -2,9 +2,11 @@
 a {
     background-color: #3D3D3D;
 }
-
+body {
+    background-color: !important;
+} 
 element.style {
-    background-color: !important #3D3D3D ;
+    background-color: !important darkgrey ;
 }
 
 code {

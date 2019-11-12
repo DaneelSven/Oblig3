@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Contact} from './Contact'
 
 export class FetchData extends Component {
   static displayName = FetchData.name;
@@ -44,9 +45,7 @@ export class FetchData extends Component {
 
     return (
       <div>
-        <h1 id="tabelLabel" >Weather forecast</h1>
-        <p>This component demonstrates fetching data from the server.</p>
-        {contents}
+        <Contact/>
       </div>
     );
   }

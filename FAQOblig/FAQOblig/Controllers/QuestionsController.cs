@@ -45,17 +45,14 @@ namespace FAQOblig.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutQuestions(int id, Questions questions)
-        {
-            if (id != questions.ID)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(questions).State = EntityState.Modified;
+        public async Task<IActionResult> PutQuestions(int id,int votes)
+        { 
+          
 
             try
             {
+                var question = _context.Questions.Find(id);
+                question.Votes += votes;
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -77,12 +74,12 @@ namespace FAQOblig.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Questions>> PostQuestions(Questions questions)
+        public async Task<ActionResult<Questions>> PostQuestions(Contact contact)
         {
-            _context.Questions.Add(questions);
+            _context.Contact.Add(contact);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetQuestions", new { id = questions.ID }, questions);
+            return CreatedAtAction("GetQuestions", new { id = contact.ID }, contact);
         }
 
         // DELETE: api/Questions/5
