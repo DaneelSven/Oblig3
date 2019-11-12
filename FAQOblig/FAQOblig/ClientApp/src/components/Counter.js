@@ -7,7 +7,7 @@ export class Counter extends Component {
 
 
     Voting(id, votes) {
-        axios.put('api/Questions/' + id + '?vote' + votes)
+        axios.put('api/Questions/' + id + '?votes=' + votes)
             .then(response => {
                 console.log(response)
             })

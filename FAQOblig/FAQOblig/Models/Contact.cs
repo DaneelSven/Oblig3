@@ -13,12 +13,12 @@ namespace FAQOblig.Models
 
         [Display(Name = "FirstName")]
         [Required(ErrorMessage = "Please enter a FirstName")]
-        public String FirstName { get; set; }
+        public String Firstname { get; set; }
 
 
         [Display(Name = "LastName")]
         [Required(ErrorMessage = "Please enter a LastName")]
-        public String LastName { get; set; }
+        public String Lastname { get; set; }
 
         [EmailAddress(ErrorMessage = "Please provide a valid Email Address")]
         public String Email { get; set; }

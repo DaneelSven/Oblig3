@@ -11,51 +11,56 @@ namespace FAQOblig.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class QuestionsController : ControllerBase
+    public class ContactsController : ControllerBase
     {
         private readonly DB _context;
 
-        public QuestionsController(DB context)
+        public ContactsController(DB context)
         {
             _context = context;
         }
 
-        // GET: api/Questions
+        // GET: api/Contacts
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Questions>>> GetQuestions()
+        public async Task<ActionResult<IEnumerable<Contact>>> GetContact()
         {
-            return await _context.Questions.ToListAsync();
+            return await _context.Contact.ToListAsync();
         }
 
-        // GET: api/Questions/5
+        // GET: api/Contacts/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Questions>> GetQuestions(int id)
+        public async Task<ActionResult<Contact>> GetContact(int id)
         {
-            var questions = await _context.Questions.FindAsync(id);
+            var contact = await _context.Contact.FindAsync(id);
 
-            if (questions == null)
+            if (contact == null)
             {
                 return NotFound();
             }
 
-            return questions;
+            return contact;
         }
 
-        // PUT: api/Questions/5
+        // PUT: api/Contacts/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutQuestions(int id,int votes)
-        {           
+        public async Task<IActionResult> PutContact(int id, Contact contact)
+        {
+            if (id != contact.ID)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(contact).State = EntityState.Modified;
+
             try
             {
-                var question = _context.Questions.Find(id);
-                question.Votes += votes;
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!QuestionsExists(id))
+                if (!ContactExists(id))
                 {
                     return NotFound();
                 }
@@ -68,37 +73,37 @@ namespace FAQOblig.Controllers
             return NoContent();
         }
 
-        // POST: api/Questions
+        // POST: api/Contacts
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
         [HttpPost]
-        public async Task<ActionResult<Questions>> PostQuestions(Contact contact)
+        public async Task<ActionResult<Contact>> PostContact(Contact contact)
         {
             _context.Contact.Add(contact);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetQuestions", new { id = contact.ID }, contact);
+            return CreatedAtAction("GetContact", new { id = contact.ID }, contact);
         }
 
-        // DELETE: api/Questions/5
+        // DELETE: api/Contacts/5
         [HttpDelete("{id}")]
-        public async Task<ActionResult<Questions>> DeleteQuestions(int id)
+        public async Task<ActionResult<Contact>> DeleteContact(int id)
         {
-            var questions = await _context.Questions.FindAsync(id);
-            if (questions == null)
+            var contact = await _context.Contact.FindAsync(id);
+            if (contact == null)
             {
                 return NotFound();
             }
 
-            _context.Questions.Remove(questions);
+            _context.Contact.Remove(contact);
             await _context.SaveChangesAsync();
 
-            return questions;
+            return contact;
         }
 
-        private bool QuestionsExists(int id)
+        private bool ContactExists(int id)
         {
-            return _context.Questions.Any(e => e.ID == id);
+            return _context.Contact.Any(e => e.ID == id);
         }
     }
 }

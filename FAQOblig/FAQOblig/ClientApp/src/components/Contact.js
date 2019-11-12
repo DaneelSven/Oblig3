@@ -22,7 +22,7 @@ import axios from 'axios';
      }
 
      handleSubmit = (event) => {
-         axios.post("api/Questions", this.state)
+         axios.post("api/Contacts", this.state)
              .then(response => {
                  console.log(response)
                  this.setState({
