@@ -34,7 +34,7 @@ export class NavMenu extends Component {
 
                 <Container>
 
-                    <NavbarBrand className="color2" tag={Link} to="/">FAQOblig</NavbarBrand>
+                    <NavbarBrand className="color2" tag={Link} to="/">FAQ VY</NavbarBrand>
 
                     <NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
 
@@ -44,18 +44,18 @@ export class NavMenu extends Component {
 
                             <NavItem>
 
-                                <NavLink tag={Link} className="text-white" to="/">Home</NavLink>
+                                <NavLink tag={Link} className="text-white" to="/">FAQ</NavLink>
 
                             </NavItem>
 
                             <NavItem>
 
-                                <NavLink tag={Link} className="text-white" to="/Contact">Contact</NavLink>
+                                <NavLink tag={Link} className="text-white" to="/Contact">Contact Us</NavLink>
 
                             </NavItem>
 
                             <NavItem>
-                                <NavLink tag={Link} className="text-white" to="/fetch-data">Unanswered Questions</NavLink>
+                                <NavLink tag={Link} className="text-white" to="/fetch-data">Submitted Questions</NavLink>
 
                             </NavItem>                           
               </ul>

@@ -56,23 +56,6 @@ export class Home extends Component {
       return (
           <div className="a" >
               <Question />
-
-              <form onSubmit={this.handleSubmit}>
-              <div className="input-group box">
-                  <input
-                          type="text"
-                          name="question"
-                          value={question}
-                          onChange={this.handleQuestion}
-                          className="form-control"
-                          placeholder="Ask a Question"
-                          aria-label="Question with button" 
-                          aria-describedby="button-addon4" />
-                      <div className="input-group-append" id="button-addon4">
-                          <button className="btn btn-outline-secondary" type="submit">Ask</button>
-                      </div>
-                  </div>
-              </form>
           </div>  
           
     );

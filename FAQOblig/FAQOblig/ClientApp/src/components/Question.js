@@ -75,6 +75,7 @@ export class Question extends Component {
     render() {
         return (
             <div className="box">
+                <h2 className="text-center box2">Frequently asked Questions</h2>
                 {this.state.data.map(obj => {
                     return (
                         <div>
