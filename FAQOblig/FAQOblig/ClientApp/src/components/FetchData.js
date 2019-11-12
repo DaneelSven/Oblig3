@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {Contact} from './Contact'
+import { UnansweredQuestions } from './UnansweredQuestions';
 
 export class FetchData extends Component {
   static displayName = FetchData.name;
@@ -7,8 +8,8 @@ export class FetchData extends Component {
   render() {
  
     return (
-      <div>
-        <Contact/>
+        <div>
+            <UnansweredQuestions/>
       </div>
     );
   }

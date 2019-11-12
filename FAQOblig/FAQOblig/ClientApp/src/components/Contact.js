@@ -1,14 +1,15 @@
 ﻿import React, { Component } from "react";
 import axios from 'axios';
+import { UnansweredQuestions } from "./UnansweredQuestions";
 
 
 
  export class Contact extends Component {
 
      state = {
-         firstname : '',
-         lastname : '',
-         email : '',
+         firstname: '',
+         lastname: '',
+         email: '',
          question: ''
      }
 
@@ -22,7 +23,8 @@ import axios from 'axios';
      }
 
      handleSubmit = (event) => {
-         axios.post("api/Contacts", this.state)
+         event.preventDefault()
+         axios.post('/api/contacts', this.state)
              .then(response => {
                  console.log(response)
                  this.setState({
@@ -39,6 +41,16 @@ import axios from 'axios';
          
      }
 
+     handleSubmit2(event) {
+
+         axios.post("api/Questions", this.state)
+             .then(response => {
+                 console.log(response)
+             }).catch(error => {
+                 console.log(error)
+             });
+     }
+
      render() {
          return (
 
@@ -46,14 +58,15 @@ import axios from 'axios';
 
                  <form onSubmit={this.handleSubmit}>
 
-                     <input type="text" value={this.state.firstname} name="firstname" onChange={this.HanldeChange} />
-                     <input type="text" value={this.state.lastname} name="lastname" onChange={this.HanldeChange} />
-                     <input type="text" value={this.state.email} name="email" onChange={this.HanldeChange} />
-                     <input type="text" value={this.state.question} name="question" onChange={this.HanldeChange} />
+                     <input type="text" value={this.state.firstname} name="firstname" onChange={this.HanldeChange} required/>
+                     <input type="text" value={this.state.lastname} name="lastname" onChange={this.HanldeChange} required />
+                     <input type="text" value={this.state.email} name="email" onChange={this.HanldeChange} required />
+                     <input type="text" value={this.state.question} name="question" onChange={this.HanldeChange} required/>
 
                      <button className="btn btn-outline-secondary" type="submit">Ask</button>
 
                  </form>
+
              </div>
          );
  }

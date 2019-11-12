@@ -7,6 +7,7 @@ import { Counter } from './components/Counter';
 
 import './custom.css'
 import { Contact } from './components/Contact';
+import { UnansweredQuestions } from './components/UnansweredQuestions';
 
 export default class App extends Component {
   static displayName = App.name;
@@ -15,9 +16,8 @@ export default class App extends Component {
     return (
       <Layout>
         <Route exact path='/' component={Home} />
-        <Route path='/counter' component={Counter} />
             <Route path='/fetch-data' component={FetchData} />
-            <Route path='/Contact' component={Contact}/>
+            <Route path='/Contact' component={Contact} />
       </Layout>
     );
   }

@@ -71,14 +71,14 @@ namespace FAQOblig.Controllers
         // POST: api/Questions
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
-        [HttpPost]
-        public async Task<ActionResult<Questions>> PostQuestions(Contact contact)
-        {
-            _context.Contact.Add(contact);
-            await _context.SaveChangesAsync();
+        //[HttpPost]
+        //public async Task<ActionResult<Contact>> PostQuestions(Contact contact)
+        //{
+        //    _context.Contact.Add(contact);
+        //    await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetQuestions", new { id = contact.ID }, contact);
-        }
+        //    return CreatedAtAction("GetQuestions", new { id = contact.ID }, contact);
+        //}
 
         // DELETE: api/Questions/5
         [HttpDelete("{id}")]
