@@ -6,17 +6,16 @@ export class Question extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [],
+            questionData: [],
 
         }
     }
 
     componentDidMount() {
-
         fetch("api/Questions")
             .then(response => response.json())
             .then(responseJson => {
-                this.setState({ data: responseJson });
+                this.setState({ questionData: responseJson });
             })
             .catch(error => {
                 console.error(error)
@@ -28,7 +27,7 @@ export class Question extends Component {
         return (
             <div className="box">
                 <h2 className="text-center box2 ">Frequently asked Questions</h2>
-                {this.state.data.map(obj => {
+                {this.state.questionData.map(obj => {
 
                     return (
                         <div key={obj.id}>
@@ -37,12 +36,9 @@ export class Question extends Component {
                                 answers={obj.answers}
                                 id={obj.id}
                                 votes={obj.votes}
-
-
                             />
                         </div>
-                    )
-                })}
+                    )})}
             </div>
         );
     }

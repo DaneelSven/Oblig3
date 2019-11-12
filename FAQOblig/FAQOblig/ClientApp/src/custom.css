@@ -70,3 +70,15 @@ code {
     color: white;
     float: right;
 }
+
+.counter {
+    margin-right: 0.5em;
+}
+
+.icon:hover {
+    color: darkred;
+}
+
+.icon2:hover {
+    color: lawngreen
+}

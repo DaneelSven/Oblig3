@@ -1,6 +1,4 @@
-﻿import { Accordion, Card } from 'react-bootstrap'
-import React, { Component } from 'react';
-import { IoIosArrowBack } from "react-icons/io";
+﻿import React, { Component } from 'react';
 import { UnansweredBox } from './UnansweredBox';
 
 export class UnansweredQuestions extends Component {
@@ -8,16 +6,15 @@ export class UnansweredQuestions extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            data: [],
+            SubmittedData: [],
         }
-
     }
 
     componentDidMount() {
         fetch("api/Contacts")
             .then(response => response.json())
             .then(responseJson => {
-                this.setState({ data: responseJson });
+                this.setState({ SubmittedData: responseJson });
             })
             .catch(error => {
                 console.error(error)
@@ -27,11 +24,9 @@ export class UnansweredQuestions extends Component {
     render() {
 
         return (
-
             <div>
                 <h2 className="text-center box2">Submitted Questions</h2>
-                {this.state.data.map(obj => {
-
+                {this.state.SubmittedData.map(obj => {
                     return (
                         <UnansweredBox
                             id={obj.id}
@@ -40,8 +35,7 @@ export class UnansweredQuestions extends Component {
                             email={obj.email}
                             question={obj.question}
                         />
-                    )
-                })}
+                    )})}
             </div>
         )
     }

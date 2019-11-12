@@ -11,7 +11,7 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
          question: ''
      }
 
-     handleChange = (e) => {
+     handleStateChange = (e) => {
          const {name, value} = e.target;
 
          this.setState({
@@ -30,7 +30,7 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
                      email: '',
                      question: ''
                  })
-                 window.location.href = "/fetch-data"
+                 window.location.href = "/submitted"
              }).catch(error => {
                  console.log(error)   
              })
@@ -52,7 +52,7 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
                              aria-describedby="inputGroup-sizing-default"
                              type="text" value={this.state.firstname}
                              name="firstname"
-                             onChange={this.handleChange}
+                             onChange={this.handleStateChange}
                              required
                          />
                      </InputGroup>
@@ -66,7 +66,7 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
                              aria-describedby="inputGroup-sizing-default"
                              type="text" value={this.state.lastname}
                              name="lastname"
-                             onChange={this.handleChange}
+                             onChange={this.handleStateChange}
                              required
                          />
                      </InputGroup>
@@ -80,7 +80,7 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
                              aria-describedby="inputGroup-sizing-default"
                              type="email" value={this.state.email}
                              name="email"
-                             onChange={this.handleChange}
+                             onChange={this.handleStateChange}
                              required
                          />
                      </InputGroup>
@@ -94,7 +94,7 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
                              aria-describedby="inputGroup-sizing-default"
                              type="text" value={this.state.question}
                              name="question"
-                             onChange={this.handleChange}
+                             onChange={this.handleStateChange}
                              required/>
                      </Form.Group>
                      <button className="btn btn-dark btn-lg btn-block" type="submit">Submitt your request</button>

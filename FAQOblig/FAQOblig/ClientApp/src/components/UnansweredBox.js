@@ -7,19 +7,7 @@ export class UnansweredBox extends Component {
 
 
     state = {
-        data: [],
         open: false
-    }
-
-    componentDidMount() {
-        fetch("api/Contacts")
-            .then(response => response.json())
-            .then(responseJson => {
-                this.setState({ data: responseJson });
-            })
-            .catch(error => {
-                console.error(error)
-            });
     }
 
     changeArrow = () => {
