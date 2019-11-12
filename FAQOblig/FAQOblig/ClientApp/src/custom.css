@@ -3,10 +3,19 @@ a {
     background-color: #3D3D3D;
 }
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     background-color: darkgrey;
-} 
-element.style {
+}
+#root{
     background-color: darkgrey;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#root > div {
+    flex: 1;
 }
 
 code {

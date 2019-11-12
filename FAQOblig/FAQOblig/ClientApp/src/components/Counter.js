@@ -3,8 +3,7 @@ import { IoIosThumbsDown, IoIosThumbsUp } from "react-icons/io";
 import axios from 'axios';
 
 export class Counter extends Component {
-  static displayName = Counter.name;
-
+    static displayName = Counter.name;
 
     Voting(id, votes) {
         axios.put('api/Questions/' + id + '?votes=' + votes)
@@ -16,8 +15,6 @@ export class Counter extends Component {
             })
         window.location.reload(false)
     }
-
- 
 
   render() {
     return (

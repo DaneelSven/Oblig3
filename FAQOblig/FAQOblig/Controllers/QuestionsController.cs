@@ -27,20 +27,6 @@ namespace FAQOblig.Controllers
             return await _context.Questions.ToListAsync();
         }
 
-        // GET: api/Questions/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Questions>> GetQuestions(int id)
-        {
-            var questions = await _context.Questions.FindAsync(id);
-
-            if (questions == null)
-            {
-                return NotFound();
-            }
-
-            return questions;
-        }
-
         // PUT: api/Questions/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for
         // more details see https://aka.ms/RazorPagesCRUD.
@@ -66,34 +52,6 @@ namespace FAQOblig.Controllers
             }
 
             return NoContent();
-        }
-
-        // POST: api/Questions
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for
-        // more details see https://aka.ms/RazorPagesCRUD.
-        //[HttpPost]
-        //public async Task<ActionResult<Contact>> PostQuestions(Contact contact)
-        //{
-        //    _context.Contact.Add(contact);
-        //    await _context.SaveChangesAsync();
-
-        //    return CreatedAtAction("GetQuestions", new { id = contact.ID }, contact);
-        //}
-
-        // DELETE: api/Questions/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult<Questions>> DeleteQuestions(int id)
-        {
-            var questions = await _context.Questions.FindAsync(id);
-            if (questions == null)
-            {
-                return NotFound();
-            }
-
-            _context.Questions.Remove(questions);
-            await _context.SaveChangesAsync();
-
-            return questions;
         }
 
         private bool QuestionsExists(int id)
