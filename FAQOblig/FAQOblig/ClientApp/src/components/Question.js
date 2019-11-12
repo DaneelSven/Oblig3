@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Counter } from './Counter';
 import { IoIosArrowBack } from "react-icons/io";
+import { Box } from './Box';
 
 export class Question extends Component {
 
@@ -34,24 +35,15 @@ export class Question extends Component {
                 {this.state.data.map(obj => {
 
                     return (
-                        <div>
-                            <div>
-                                <Accordion className="box" defaultActiveKey="1">
-                                    <Card className="cardBody" body inverse style={{ backgroundColor: '#333', borderColor: '#BDC3C7' }}>
-                                        <Accordion.Toggle className="cardHeader" as={Card.Header} eventKey="0">
-                                            Question number: {obj.id}
-                                            <IoIosArrowBack className="arrow" />
-                                            <h5>{obj.question}</h5>
-                                        </Accordion.Toggle>
-                                        <Accordion.Collapse eventKey="0">
-                                            <Card.Body className="cardBody">
-                                                <p><strong>Answer:</strong> {obj.answers}</p>
-                                                <Counter votes={obj.votes} voteId={obj.id} />
-                                            </Card.Body>
-                                        </Accordion.Collapse>
-                                    </Card>
-                                </Accordion>
-                            </div>
+                        <div key={obj.id}>
+                            <Box
+                                question={obj.question}
+                                answers={obj.answers}
+                                id={obj.id}
+                                votes={obj.votes}
+
+
+                            />
                         </div>
                     )
                 })}

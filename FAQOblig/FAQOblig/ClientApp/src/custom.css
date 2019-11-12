@@ -18,6 +18,9 @@ body {
     flex: 1;
 }
 
+.Contact {
+    background-color: green;
+}
 code {
   color: #E01A76;
 }
