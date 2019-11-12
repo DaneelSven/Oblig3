@@ -19,12 +19,9 @@ export class Counter extends Component {
   render() {
     return (
         <div>
-
             <IoIosThumbsDown onClick={() => this.Voting(this.props.voteId, -1)} />
             <h7 aria-live="polite">Popularity: <strong>{this.props.votes}</strong></h7>
-            <IoIosThumbsUp onClick={() => this.Voting(this.props.voteId, +1)}/>
-
-            
+            <IoIosThumbsUp onClick={() => this.Voting(this.props.voteId, +1)}/>  
       </div>
     );
   }

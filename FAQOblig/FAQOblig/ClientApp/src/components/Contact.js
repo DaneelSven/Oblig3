@@ -40,7 +40,7 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
          return (
 
              <div>
-                 <h2 className="text-center box2">Contact Us</h2>
+                 <h2 className="text-center box2 ">Contact Us</h2>
                  <form onSubmit={this.handleContactSubmitt}>
 
                      <InputGroup className="mb-3">
@@ -86,8 +86,8 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
                      </InputGroup>
 
                      <Form.Group controlId="exampleForm.ControlTextarea1">
-                         <Form.Label>Ask your Question:</Form.Label>
                          <Form.Control
+                             placeholder="Ask your Question"
                              as="textarea"
                              rows="3"
                              aria-label="Your Question"
@@ -97,7 +97,7 @@ import { InputGroup, FormControl, Form } from 'react-bootstrap';
                              onChange={this.handleChange}
                              required/>
                      </Form.Group>
-                     <button className="btn btn-outline-secondary" type="submit">Ask</button>
+                     <button className="btn btn-dark btn-lg btn-block" type="submit">Submitt your request</button>
                  </form>
              </div>
          );

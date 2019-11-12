@@ -44,9 +44,11 @@ export class UnansweredBox extends Component {
                     </Accordion.Toggle>
                     <Accordion.Collapse eventKey="0">
                         <Card.Body className="cardBody">
-                                <h5><strong>First name: </strong> {this.props.firstname}</h5>
-                                <h5><strong>Last name: </strong>{this.props.lastname}</h5>
-                                <h5><strong>Email: </strong>{this.props.email}</h5>
+                                <p><strong>First name: </strong> {this.props.firstname}</p>
+                                <p><strong>Last name: </strong>{this.props.lastname}</p>
+                                <p><strong>Email: </strong>{this.props.email}</p>
+                                <p><strong>Answer: </strong>Your question is currently under review and we will provide you with an answer shortly,
+                                    Thank you for your patience!</p>
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>

@@ -1,8 +1,7 @@
 ﻿import { Accordion, Card } from 'react-bootstrap'
 import React, { Component } from 'react';
-import axios from 'axios';
 import { Counter } from './Counter';
-import { IoIosArrowBack, IoIosArrowRoundDown, IoIosArrowDown } from "react-icons/io";
+import { IoIosArrowBack, IoIosArrowDown } from "react-icons/io";
 
 
 export class Box extends Component {
@@ -12,7 +11,6 @@ export class Box extends Component {
     }
 
     componentDidMount() {
-
         fetch("api/Questions")
             .then(response => response.json())
             .then(responseJson => {
@@ -32,7 +30,6 @@ export class Box extends Component {
     render() {
         return (
             <div>
-
                 <Accordion className="box" defaultActiveKey="1">
                     <Card className="cardBody" body inverse style={{ backgroundColor: '#333', borderColor: '#BDC3C7' }}>
                         <Accordion.Toggle className="cardHeader" as={Card.Header} onClick={this.changeArrow} eventKey="0">
@@ -50,12 +47,8 @@ export class Box extends Component {
                             </Card.Body>
                         </Accordion.Collapse>
                     </Card>
-                        </Accordion>
-
-               
-
-            </div>
-            
+                </Accordion>
+            </div>          
             )
     }
 }

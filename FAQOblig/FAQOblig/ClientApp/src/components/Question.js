@@ -1,8 +1,4 @@
-﻿import { Accordion, Card  } from 'react-bootstrap'
-import React, { Component } from 'react';
-import axios from 'axios';
-import { Counter } from './Counter';
-import { IoIosArrowBack } from "react-icons/io";
+﻿import React, { Component } from 'react';
 import { Box } from './Box';
 
 export class Question extends Component {
@@ -31,7 +27,7 @@ export class Question extends Component {
 
         return (
             <div className="box">
-                <h2 className="text-center box2">Frequently asked Questions</h2>
+                <h2 className="text-center box2 ">Frequently asked Questions</h2>
                 {this.state.data.map(obj => {
 
                     return (
