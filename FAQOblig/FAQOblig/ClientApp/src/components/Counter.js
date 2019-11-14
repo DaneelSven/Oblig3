@@ -5,6 +5,14 @@ import axios from 'axios';
 export class Counter extends Component {
     static displayName = Counter.name;
 
+    state = {
+        open: false;
+    }
+
+    handleFeedback = () => {
+        open: !this.state.open
+    }
+
     Voting(id, votes) {
         axios.put('api/Questions/' + id + '?votes=' + votes)
             .then(response => {
@@ -17,12 +25,22 @@ export class Counter extends Component {
     }
 
   render() {
-    return (
-        <div>
-            <IoIosThumbsDown className="counter icon" onClick={() => this.Voting(this.props.voteId, -1)} />
-            <h7 className="counter" aria-live="polite">Popularity: <strong>{this.props.votes}</strong></h7>
-            <IoIosThumbsUp className="icon2" onClick={() => this.Voting(this.props.voteId, +1)}/>  
-      </div>
+      return (
+
+          <div>
+              {(this.state.open) ?
+                  <div>
+                      <p>this is working</p>
+                  </div>
+                  :
+                  <div>
+                      <IoIosThumbsDown className="counter icon" onClick={() => this.Voting(this.props.voteId, -1) && this.handleFeedback} />
+                      <h7 className="counter" aria-live="polite">Popularity: <strong>{this.props.votes}</strong></h7>
+                      <IoIosThumbsUp className="icon2" onClick={() => this.Voting(this.props.voteId, +1)} />
+                  </div>
+              }
+
+          </div>
     );
   }
 }
